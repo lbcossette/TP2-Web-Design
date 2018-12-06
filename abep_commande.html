@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- Laurent Bruneau-Cossette -->
+<html lang="fr">
+  <head>
+    <title> AB équipements de plongée - Commande </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSM.css">
+  </head>
+  <body>
+    <script src="itemlist.js"></script>
+    <div id="container">
+      <div class="top_bar">
+        <header>
+          <h1>AB équipements de plongée</h1>
+        </header>
+
+        <nav>
+          <ul>
+            <li>
+              <b><a href="abep_accueil.html">Accueil</a></b>
+            </li>
+            <li>
+              <b><a href="abep_equipement.html">Équipements</a></b>
+              <ul>
+                <li><a href="abep_equipement.html#respiration">Systèmes<br>respiratoires</a></li>
+                <li><a href="abep_equipement.html#protection">Protection<br>corporelle</a></li>
+                <li><a href="abep_equipement.html#accessoires">Accessoires</a></li>
+                <li><a href="abep_equipement.html#forfaits">Forfaits</a></li>
+              </ul>
+            </li>
+            <li>
+              <b><a href="abep_commande.html">Commander</a></b>
+            </li>
+            <li>
+              <b><a href="abep_apropos.html">À propos</a></b>
+            </li>
+            <li>
+              <b><a href="abep_design.html">Design</a></b>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content">
+        <main>
+          <form name="order" method="POST" id="order" action="http://www-etud.iro.umontreal.ca/~chartral/ift1005/form_print.php" target="_self">
+            <h2>Vos informations personnelles</h2>
+            <p>Les informations obligatoires sont marquées d'un astérisque (*).</p>
+            <div class="pers_info">
+              <label for="FirstName">* Prénom : </label>
+              <input name="FirstName" id="FirstName" type="text" autocomplete="on" required="required"><br>
+            </div>
+            <div class="pers_info">
+              <label for="LastName">* Nom : </label>
+              <input name="LastName" id="LastName" type="text" autocomplete="on" required="required"><br>
+            </div>
+            <div class="pers_info">
+              <label for="EMail">* Adresse courriel : </label>
+              <input name="EMail" id="EMail" type="email" autocomplete="on" required="required">
+            </div>
+            <div class="pers_info">
+              <label for="Tel">Téléphone : </label>
+              <input name="Tel" id="Tel" type="tel" autocomplete="on">
+            </div>
+            <div class="pers_info">
+              <label for="BeginDate">* Date de début de location :</label>
+              <input name="BeginDate" id="BeginDate" type="date" required="required">
+            </div>
+            <div class="pers_info">
+              <label for="LocLength">* Durée de location (jours) :</label>
+              <input name="LocLength" id="LocLength" type="number" value="1" min="1" max="28" onchange="reTotal(-1)" required="required">
+            </div>
+            <h2>Votre commande</h2>
+            <p>Le prix indiqué est pour chaque jour de location.<br>Le résumé tient en compte de la durée totale de la location.</p>
+            <h3>Systèmes respiratoires</h3>
+            <div class="order-line">
+              <p class="item-name"><strong>Nom</strong></p>
+              <p class="item-ppu"><strong>Prix unitaire</strong></p>
+              <p class="qty"><strong>Quantité</strong></p>
+              <p class="itm-total"><strong>Total</strong></p>
+            </div>
+            <div id="resp_items"></div>
+            <h3>Protection corporelle</h3>
+            <div class="order-line">
+              <p class="item-name"><strong>Nom</strong></p>
+              <p class="item-ppu"><strong>Prix unitaire</strong></p>
+              <p class="qty"><strong>Quantité</strong></p>
+              <p class="itm-total"><strong>Total</strong></p>
+            </div>
+            <div id="prot_items"></div>
+            <h3>Accessoires</h3>
+            <div class="order-line">
+              <p class="item-name"><strong>Nom</strong></p>
+              <p class="item-ppu"><strong>Prix unitaire</strong></p>
+              <p class="qty"><strong>Quantité</strong></p>
+              <p class="itm-total"><strong>Total</strong></p>
+            </div>
+            <div id="accs_items"></div>
+            <h3>Forfaits de location</h3>
+            <div class="order-line">
+              <p class="item-name"><strong>Nom</strong></p>
+              <p class="item-ppu"><strong>Prix unitaire</strong></p>
+              <p class="qty"><strong>Quantité</strong></p>
+              <p class="itm-total"><strong>Total</strong></p>
+            </div>
+            <div id="forf_items"></div>
+            <h3>Résumé</h3>
+            <div class="order-line">
+              <p class="item-name">&nbsp;</p>
+              <p class="item-ppu">&nbsp;</p>
+              <p class="qty">Sous-total :</p>
+              <p class="itm-total" id="sous-total">0,00$</p>
+            </div>
+            <div class="order-line">
+              <p class="item-name">&nbsp;</p>
+              <p class="item-ppu">&nbsp;</p>
+              <p class="qty">TPS :</p>
+              <p class="itm-total" id="TPS">0,00$</p>
+            </div>
+            <div class="order-line">
+              <p class="item-name">&nbsp;</p>
+              <p class="item-ppu">&nbsp;</p>
+              <p class="qty">TVQ :</p>
+              <p class="itm-total" id="TVQ">0,00$</p>
+            </div>
+            <div class="order-line">
+              <p class="item-name">&nbsp;</p>
+              <p class="item-ppu">&nbsp;</p>
+              <p class="qty">Total :</p>
+              <p class="itm-total" id="Total">0,00$</p>
+            </div>
+            <input type="submit" value="Commander">
+          </form>
+        </main>
+
+        <footer id=info>
+          <hr>
+          <p>
+            <span class = "company">AB équipements de plongée</span><br>
+            777 Rue Mercure<br>
+            Mont-Tremblant, CA<br><br>
+            514-525-5225
+          </p>
+          <p><small><i>
+            Copyright &copy; 2018 AB équipements de plongée<br>
+            <a href="mailto:Laurent@Bruneau-Cossette.com"> Laurent@Bruneau-Cossette.com</a>  <br> &#38; <br>
+            <a href="mailto:Adel@Abdeladim.com">Adel@Abdeladim.com</a>
+          </i></small></p>
+        </footer>
+      </div>
+
+    </div>
+    <script src="orderlist.js"></script>
+  </body>
+</html>

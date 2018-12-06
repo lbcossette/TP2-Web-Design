@@ -1,0 +1,570 @@
+#container {
+    margin-left : auto;
+    margin-right : auto;
+    width : 70%;
+    font-family :verdana, arial, sans-serif;
+    color : #000000;
+    background-color: #FFFFFF;
+    opacity: 0.9;
+    box-shadow: 0px 0px 5px 5px #FFFFFF;
+}
+
+/* Body section */
+
+body {
+    /* https://www.freeimages.com/photo/underwater-1170130 */
+    background-image: url("underwater.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Top bar section */
+
+.top_bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 2%;
+}
+
+header {
+    order: 0;
+    flex-grow: 1;
+    text-align: center;
+    color : #000033;
+    padding: 1%;
+    box-sizing: border-box;
+    margin-left: 7%;
+    margin-right: 0%;
+    max-width: 30%;
+}
+
+nav {
+    order: 1;
+    flex-grow: 3;
+    box-sizing: border-box;
+    padding: 1% 0% 1% 0%;
+    margin-left: 0%;
+    margin-right: 10%;
+    overflow: auto;
+    text-align: center;
+    min-width: 55%;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2vw;
+    width: 100%;
+    color: #ffffff;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav ul {
+    list-style-type:none;
+    margin: 0px;
+    padding-left: 0px;
+    background-color : #000033;
+    color : #ffffff;
+    border-radius: 5px;
+}
+
+nav ul li {
+    display:inline-block;
+    padding-left:2%;
+    padding-right:2%;
+}
+
+nav ul li ul {
+    display: none;
+    padding: 1%;
+}
+
+nav ul li:hover ul {
+    display: block;
+    position: absolute;
+    z-index: 99;
+}
+
+nav ul li ul li {
+    display: block;
+    margin: 0px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+/* Main section */
+
+main {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+main dl {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* Clearfix sections */
+
+.clearfix {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-right: 2%;
+    padding-bottom: 1%;
+}
+
+.clearfix img {
+    padding-top:1%;
+    width: 35%;
+    order: 0;
+    flex-grow: 1;
+}
+
+.clearfix .clearfix_content {
+    order: 1;
+    flex-grow: 3;
+    padding-left: 3%;
+}
+
+/* Headers section */
+
+h1 {
+    font-family : georgia, serif;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1.8vw;
+}
+
+h2 {
+    text-align: center;
+    padding: 5% 3% 3% 3%;
+    color : #165069;
+    font-family : georgia, serif;
+    font-size: 1.7vw;
+    margin-top: 0px;
+    text-decoration: underline;
+}
+
+h3 {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size : 1.5vw;
+    font-weight : bold;
+    color : #000033;
+}
+
+/* Item setion */
+
+.item-line {
+    width:90%;
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-line * {
+    margin: 10px;
+}
+
+.item-line img,.filler {
+    min-width: 20%;
+    max-width: 20%;
+    flex-grow: 1;
+}
+
+.item-fill {
+    flex-grow: 5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-name {
+    flex-grow: 1;
+    max-width: 15%;
+    text-align: center;
+}
+
+.item-desc {
+    flex-grow: 10;
+    max-width: 50%;
+}
+
+.item-ppu {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.legend {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Table section */
+
+table {
+    text-align: center;
+    border: 1px solid #3399CC;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+table th, table td {
+    border: 1px solid #3399CC;
+    padding: 1%;
+}
+
+tr:nth-child(even) {
+    background-color: #E4F1F8;
+}
+
+/* Classes */
+
+.content {
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow:auto;
+}
+.company {
+    font-size : 1.1em;
+    font-weight : bold;
+    color : #000033;
+}
+/* Form section */
+
+form {
+    width: 60%;
+    text-align: center;
+    margin:auto;
+}
+
+.pers_info {
+    width:100%;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pers_info label {
+    text-align: right;
+    padding-right: 2%;
+    min-width: 45%;
+    max-width: 45%;
+    font-size: 0.9vw;
+    flex-grow: 1;
+}
+
+.pers_info input {
+    flex-grow: 1;
+    max-width: 40%;
+    min-width: 40%;
+}
+
+.order-line {
+    width:80%;
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.order-line * {
+    margin: 10px;
+    min-width: 25%;
+    text-align: center;
+    font-size: 1.0vw;
+}
+
+.qty-label,.qty,.itm-total {
+    flex-grow: 1;
+}
+
+.qty {
+    min-width: 20%;
+    max-width: 20%;
+}
+
+/* IDs */
+
+#info {
+    text-align : center;
+    padding-bottom: 15px;
+}
+
+/* Misc */
+
+footer {
+    clear:both;
+}
+
+p,ul {
+    padding-bottom: 1%;
+    font-size: 1vw;
+    line-height: 150%;
+}
+
+@media only all and (min-width: 769px) and (max-width: 1024px) {
+    /* Top bar section */
+
+    .top_bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+
+    header {
+        margin-left: 0%;
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+        padding: 0px;
+    }
+
+    nav a {
+        padding-top: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-bottom: 5px;
+        width: 100%;
+        height:100%;
+        font-size: 1.6vw;
+    }
+
+    nav ul {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        padding-left: 3%;
+        padding-right: 3%;
+        margin: 0px;
+    }
+
+    nav ul li:hover ul {
+        display: none;
+    }
+
+    /* Headers section */
+
+    h1 {
+        text-align: center;
+        font-size: 2.8vw;
+    }
+
+    h2 {
+        font-size: 2.3vw;
+    }
+
+    h3 {
+        font-size : 1.8vw;
+    }
+
+    /* Item line section */
+
+    .item-line img,.filler {
+        min-width: 15%;
+        max-width: 15%;
+    }
+
+    .item-name {
+        min-width: 20%;
+        max-width: 20%;
+    }
+
+    .item-ppu {
+        min-width: 20%;
+        max-width: 20%;
+    }
+
+    /* Form section */
+
+    form {
+        width: 65%;
+    }
+
+    .order-line * {
+        font-size: 1.5vw;
+    }
+
+    .pers_info label {
+        font-size: 1.5vw;
+    }
+
+    /* Misc */
+
+    p,ul {
+        font-size: 1.5vw;
+    }
+
+    /* Classes and IDs */
+
+    #container {
+        width: 99%;
+        box-shadow: none;
+    }
+}
+
+@media only all and (max-width: 768px) {
+    /* Top bar section */
+
+    .top_bar {
+        display: block;
+        padding-right: 0%;
+        padding-left: 0%;
+    }
+
+    header {
+        margin-left: 0%;
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+        box-sizing:content-box;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: solid 1px white;
+        box-sizing: border-box;
+        margin:0px;
+        font-size: 2.1vw;
+    }
+
+    nav ul {
+        border-radius: 0px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    nav ul li {
+        display:block;
+        padding:0%;
+    }
+
+    nav ul li:hover ul {
+        display: none;
+    }
+
+    /* Headers section */
+
+    h1 {
+        text-align: center;
+        font-size: 3.3vw;
+    }
+
+    h2 {
+        font-size: 2.8vw;
+    }
+
+    h3 {
+        font-size : 2.3vw;
+    }
+
+    /* Item line section */
+
+    .item-line {
+        padding-left:0%;
+        padding-right:10%;
+        width: 80%;
+    }
+
+    .item-name {
+        min-width: 20%;
+        max-width: 20%;
+    }
+
+    .item-desc {
+        min-width: 60%;
+        max-width: 60%;
+    }
+
+    .item-ppu {
+        min-width: 20%;
+        max-width: 20%;
+    }
+
+    /* Form section */
+
+    form {
+        width: 90%;
+    }
+
+    .order-line * {
+        font-size: 2.2vw;
+    }
+
+    .pers_info label {
+        font-size: 2.2vw;
+    }
+
+    /* Misc */
+
+    p,ul {
+        font-size: 2.2vw;
+    }
+
+    /* Body section */
+
+    body {
+        background-image: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    body img,.filler {
+        display: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* Classes and IDs */
+
+    #container {
+        width: 100%;
+        box-shadow: none;
+        padding: 0px;
+        margin: 0px;
+    }
+}
